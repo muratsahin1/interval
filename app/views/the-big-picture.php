@@ -10,13 +10,23 @@
 
     <title>Interval Analysis</title>
     <link href='http://fonts.googleapis.com/css?family=Quicksand:300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Exo+2:200&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Exo+2:300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS for the 'Full' Template -->
     <link href="css/the-big-picture.css" rel="stylesheet">
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+    </script>
+    <script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
 </head>
 
 <body>
@@ -54,9 +64,21 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-sm-12">
-                <h1>Interval Analysis</h1>
-                <p>Here's a spot for some awesome intro text. Check out the fixed nav at the bottom!</p>
-                <p>Set the background image in the CSS, pair it with some cool fonts, and you will have a rockin' start to a cool portfolio.</p>
+                <h1>Interval Arithmetic</h1>
+                <h2>Basics and nominations</h2>
+                <p>$X=[\underline{a},\overline{a}]$ is a closed interval if $X=\{x\in\mathbb{R}:\underline{a}\leq x\leq\overline{a} \}$. The set of all closed intervals is denoted by the $\mathbb{IR}$ symbol.
+                    Obviously $\mathbb{R}\subset\mathbb{IR}$ because $\mathbb{R}\ni x=[x,x]\in\mathbb{IR}$.
+                    We say that $[\underline{X},\overline{X}]<[\underline{Y},\overline{Y}]$ if and only if $\overline{X}<\underline{Y}$.</p>
+                <h2>Operations on intervals</h2>
+                <p>Let $\circ\in\{+,-,\cdot,/\}$ a basic operation and $[a],[b]\in\mathbb{IR}$. Then
+                    $$[a]\circ[b]=\{a\circ b:a\in[a],b\in[b]\}$$
+                    Specially:
+                    $$[a]+[b]=[\underline{a}+\underline{b},\overline{a}+\overline{b}],$$
+                    $$[a]-[b]=[\underline{a}-\overline{b},\overline{a}-\underline{b}],$$
+                    $$[a]\cdot[b]=[\min(\underline{a}\underline{b},\underline{a}\overline{b},\overline{a}\underline{b},\overline{a}\overline{b}),\max(\underline{a}\underline{b},\underline{a}\overline{b},\overline{a}\underline{b},\overline{a}\overline{b})],$$
+                    $$[a]/[b]=[a]\cdot[1/\overline{b},1/\underline{b}]\,\,\,\,\text{(if and only if }0\notin [b]\text{).}$$
+                </p>
+                <h2>Algebraic properties</h2>
             </div>
         </div>
     </div>

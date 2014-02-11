@@ -29,4 +29,32 @@ class IntervalTest extends TestCase {
 		$this->assertTrue($I1->DistanceFrom($I2) == 18);
 	}
 
+	public function testIntervalEquality() {
+		$I1 = new Interval(1,2.5);
+		$I2 = new Interval(2,6);
+		$I3 = new Interval(1,2.5);
+		$this->assertTrue($I1->Equals($I3));
+		$this->assertFalse($I1->Equals($I2));
+		$this->assertTrue($I3->Equals($I1));
+	}
+
+	public function testIntervalOperators() {
+		$I1 = new Interval(1,2.5);
+		$I2 = new Interval(2,6);
+		$I3 = $I1->Add($I2);
+		$I4 = $I2->Subtract($I1);
+		$I5 = $I1->Multiplication($I2);
+		$I6 = $I2->Divide($I1);
+		$this->assertTrue($I3->Equals(new Interval(3, 8.5)));
+		$this->assertTrue($I4->Equals(new Interval(-0.5, 5)));
+		$this->assertTrue($I5->Equals(new Interval(2, 15)));
+		$this->assertTrue($I6->Equals(new Interval(0.8, 6)));
+	}
+
+	public function testIntervalOutput() {
+		$I = new Interval(2.4, 3);
+		$this->assertTrue($I == "[2.4,3]");
+		$this->assertFalse($I == "[2,4,3]");
+	}
+
 }

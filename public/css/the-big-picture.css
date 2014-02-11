@@ -1,13 +1,14 @@
 body {
 	margin-top: 50px;
 	margin-bottom: 50px;
-	background-color: #000;
+	background-color: #fff;
 	font-family: 'Exo 2';
-	filter:alpha(opacity=70);
-	-moz-opacity: 0.7;
-	-khtml-opacity: 0.7;
-	opacity: 0.7;
+	filter:alpha(opacity=60);
+	-moz-opacity: 0.6;
+	-khtml-opacity: 0.6;
+	opacity: 0.6;
 	padding-bottom: 20px;
+	font-size: 18px;
 }
 
 .full {
@@ -19,11 +20,21 @@ body {
 }
 
 h1, p {
-	color: #ddd;
+	color: #000;
 }
 
 h1 {
-	font-size: 58px;
+	font-size: 38px;
 	font-family: 'Quicksand';
 	letter-spacing: -5px;
+}
+
+h2 {
+	font-size: 18px;
+	font-family: 'Exo-2';
+	color: black;
+}
+
+.navbar {
+	font-size: 12px;
 }
